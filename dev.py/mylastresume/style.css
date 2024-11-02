@@ -1,0 +1,201 @@
+/* General body styling */
+
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DynaPuff:wght@400..700&family=Spicy+Rice&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DynaPuff:wght@400..700&family=Spicy+Rice&display=swap");
+body {
+  background: linear-gradient(
+    to right,
+    #212221ee,
+    #534848
+  ); /* Gradient background */
+  font-family: Arial, sans-serif;
+  color: #ffffff; /* White text color for good contrast */
+
+  animation: fadeIn 5s; /* Fade-in effect */
+}
+/* General body styling */
+
+/* Skill list styling with indentation */
+ul {
+  font-family: "Abril Fatface", cursive;
+  text-transform: capitalize;
+  color: #ffffff;
+  list-style-type: triangle; /* Styled list indicator */
+  margin-left: 40px; /* Adds left indentation */
+  line-height: 1.6; /* Space between list items */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensure padding and borders don't affect element size */
+}
+
+section {
+  margin-bottom: 100px; /* Consistent spacing */
+}
+
+footer {
+  margin-bottom: 50px; /* Consistent spacing */
+}
+
+/* Contact form section spacing */
+.contact-form {
+  margin-bottom: 100px;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Header styling */
+header {
+  position: relative;
+  padding: 20px;
+}
+
+.logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 80px;
+  height: auto;
+  overflow: hidden; /* Ensures logo maintains aspect ratio */
+}
+
+/* Circle container for the image */
+.circle-container {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden; /* Ensures the image fits perfectly inside the circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ffffff; /* White border for the circle */
+  margin: 20px auto;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fits inside the circle */
+}
+
+.head {
+  text-align: center;
+  margin-top: 20px;
+}
+
+h3 {
+  font-family: "DynaPuff", cursive;
+  color: #e0f7fa; /* Light cyan for headings */
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+h2 {
+  font-family: "DynaPuff", cursive;
+  color: #e1bee7; /* Light purple for subheadings */
+  font-size: 18px;
+  margin: 10px 0;
+  text-decoration: underline;
+  text-shadow: 0 0 10px #332c3f, 0 0 20px #7e57c2; /* Glowing effect in purple */
+}
+
+p {
+  font-size: larger;
+  font-family: "Abril Fatface", cursive;
+  text-align: center;
+  margin: 0 20px;
+  color: #000000; /* Black text for contrast */
+}
+
+h1 {
+  font-family: "Abril Fatface", cursive;
+  color: #ffffff;
+  font-size: 30px;
+  margin: 10px 0;
+  text-decoration: underline;
+  text-shadow: 0 0 10px #2238ff, 0 0 20px #ff5722; /* Glowing effect in blue and orange */
+}
+
+ul {
+  font-family: "Abril Fatface", cursive;
+  text-transform: capitalize;
+  color: #000000; /* Black text for contrast */
+}
+
+/* Footer styling */
+footer p {
+  text-align: center;
+  margin-top: 20px;
+  color: #b8383800; /* Soft orange for footer text */
+}
+
+/* Contact form styling */
+.contact-form {
+  width: 60%;
+  margin: 0 auto;
+  background: rgba(34, 34, 59, 0.9); /* Dark blue form background */
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 100px;
+  color: #e0f7fa; /* Light cyan for form text */
+}
+
+.form-input {
+  background-color: #46fff3; /* Medium blue input background */
+  color: #ffffff;
+  margin: 15px 0;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #1e88e5; /* Lighter blue border */
+  border-radius: 10px;
+}
+
+.form-input:focus {
+  border-color: #bbdefb; /* Light blue border on focus */
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  background-color: #69e4e4; /* Same color as input for consistency */
+  color: #ffffff;
+  padding: 10px;
+  border: 2px solid #1e88e5;
+  border-radius: 10px;
+}
+
+/* Button styling */
+.button {
+  background-color: #ff4081; /* Pink button background */
+  color: #ffffff;
+  padding: 12px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #f50057; /* Darker pink on hover */
+}
+
+/* Final part styling */
+.lastpart {
+  text-align: center;
+  color: #ffffff;
+}

@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+.topcontainer {
+  background-image: url("background.jpg"); /* Use a relative path here */
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh; /* Full screen height */
+}
+
+h1 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: solid blacks;
+  font-size: 2em;
+}
