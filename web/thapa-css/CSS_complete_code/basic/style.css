@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0; /* Optional: Added for contrast */
+}
+
+.parent {
+  width: 500px;
+  height: 500px;
+  background-color: rgba(172, 172, 172, 0.942);
+  padding: 50px;
+  border-radius: 10%;
+  border: 3px solid black;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 15px 30px, rgba(0, 0, 0, 0.2) 0px 10px 15px;
+}
+
+img {
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

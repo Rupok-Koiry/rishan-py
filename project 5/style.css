@@ -1,0 +1,582 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+:root {
+  --header-font: "Kanit", sans-serif;
+  --paragraph-font: "Poppins", sans-serif;
+  --subheading-font: "Bebas Neue", sans-serif;
+  --main-color: #4b709e;
+  --button-color: #fe7649;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  font-family: var(--header-font);
+  text-decoration: none;
+  color: #5e4d4d;
+}
+
+a:hover {
+  background-image: linear-gradient(#fbff00, rgb(0, 102, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+}
+
+li {
+  list-style-type: none;
+}
+
+header {
+  position: relative;
+  padding: 0 2rem;
+}
+/* Base Navbar Styles */
+.navbar {
+  width: 100vw; /* Full width of the viewport */
+  height: 60px;
+  margin: 0; /* Remove margin to avoid any spacing issues */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed; /* Fix the navbar at the top */
+  top: 0; /* Ensure it stays at the top of the page */
+  left: 0; /* Ensure it's aligned to the left */
+  background: linear-gradient(to right, #4373d2, rgb(222, 144, 0));
+  background-size: 200% 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  padding: 5px 20px; /* Adjust padding */
+  animation: gradientAnimation 3s ease infinite alternate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000; /* Ensure the navbar stays on top of other elements */
+}
+
+/* Gradient Animation for the background */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px; /* Adjust padding for smaller screens */
+    height: 50px; /* Adjust height for smaller screens */
+  }
+}
+
+.navbar:hover {
+  transform: scale(1.05); /* Slight scaling effect on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar Links */
+.navbar .links {
+  display: flex;
+  gap: 2rem;
+  border-radius: 10px;
+}
+
+.navbar .links a {
+  font-family: var(--header-font);
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .links a:hover {
+  color: #f89c60;
+  transform: translateY(-5px);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .links a:active {
+  transform: scale(0.95);
+}
+
+.toggle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(20%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.menu-icon,
+.close-icon {
+  cursor: pointer;
+}
+
+/* Navbar Toggle Icon */
+.navbar .toggle {
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  transition: transform 0.3s ease;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 600px;
+
+  /* Adjust this value for vertical positioning */
+  right: 29rem; /* Adds a 2rem gap from the right side */
+  width: 200px;
+  background: linear-gradient(to bottom, #4373d2, rgb(255, 166, 0));
+  color: #fff;
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  overflow: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown.open {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem;
+  transition: background 0.3s ease;
+}
+
+.dropdown li:last-child {
+  border-bottom: none;
+}
+
+.dropdown li:hover {
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.dropdown li a {
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--header-font);
+}
+
+/* Action Button */
+.action-btn {
+  margin-right: 8rem;
+  text-align: center;
+  background-color: var(--button-color);
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.action-btn:hover {
+  background-color: #f89c60;
+  transform: scale(1.1) rotate(-3deg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.action-btn:active {
+  transform: scale(1);
+}
+.img-rk {
+  display: flex;
+}
+/* Media Queries */
+
+/* Mobile Devices */
+
+/* Small Screens */
+
+@media (max-width: 354px) {
+  .navbar {
+    margin-bottom: 20px;
+  }
+  .img {
+    max-width: 10%;
+    height: auto;
+    margin: 20px;
+    margin-bottom: 20px;
+    margin: auto;
+  }
+  h1,
+  p,
+  .hero {
+    margin: 0 20px;
+  }
+  .navbar {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 20px;
+    margin-bottom: 20px;
+  }
+  h1,
+  p,
+  .hero {
+    margin: 0 20px;
+  }
+  .navbar {
+    padding: 0 10px;
+  }
+}
+
+/* Medium Screens */
+@media (max-width: 678px) {
+  .img {
+    max-width: 90%;
+    height: auto;
+    margin: 10px auto;
+    display: block;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar .links {
+    display: none;
+  }
+  .action-btn {
+    margin-left: 20px;
+  }
+
+  .navbar .toggle {
+    display: block;
+  }
+
+  .dropdown {
+    display: block;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1026px) {
+  header {
+    margin-bottom: 6rem;
+    padding: 0 3rem;
+  }
+  .img {
+    max-width: 70%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* Extra Large Screens */
+@media (min-width: 1200px) {
+  .navbar ul li {
+    font-size: 1.5rem;
+    gap: 8rem;
+  }
+
+  .action-btn {
+    width: 100px;
+    font-size: 1rem;
+  }
+
+  header {
+    padding: 0 4rem;
+    margin-bottom: 7rem;
+  }
+
+  .img {
+    max-width: 60%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+@media (min-width: 1700px) {
+  .navbar ul li {
+    font-size: 1.5rem;
+    gap: 10rem;
+  }
+
+  .action-btn {
+    width: 150px;
+    font-size: 1.3rem;
+  }
+  .navbar {
+    padding: 20px;
+  }
+
+  .img {
+    max-width: 50%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+  p {
+    margin-left: 50px;
+  }
+}
+
+/* Default Styles for Images */
+/* Ensure no gaps around the image */
+.img {
+  display: block; /* Remove inline gaps */
+  margin: 0 auto; /* Center the image */
+  padding: 0; /* Ensure no padding */
+  width: 100%; /* Full width responsiveness */
+  max-width: 600px; /* Optional: Limit max size */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: Smooth corners */
+}
+.img:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+/* Container adjustments for better layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0; /* Remove gaps around the container */
+  padding: 0;
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+  .img {
+    width: 90%; /* Slight margin for smaller screens */
+    max-width: none;
+  }
+  .container {
+    padding: 0 10px; /* Add slight padding for small screens */
+  }
+}
+
+/* Additional Responsive Tweaks */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.header,
+.hero {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 20px; /* For smaller screens, this will create the gap on both sides */
+  box-sizing: border-box;
+}
+
+.img {
+  border-radius: 50px;
+  margin-bottom: 40px;
+
+  /* Ensures the image is responsive */
+  max-height: 80vh; /* Limits height to fit inside viewport */
+  object-fit: contain;
+  background: linear-gradient(to right, #4373d2, rgb(222, 144, 0));
+  background-size: 200% 100%; /* Make the gradient larger to animate */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  animation: gradientAnimation 3s ease infinite alternate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+} /* Ensures the image fits well */
+
+p {
+  text-align: center;
+  text-transform: capitalize;
+  font-family: var(--paragraph-font);
+  font-size: 1rem; /* Base font size */
+  color: #5e4d4d;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+.get-started {
+  background-color: rgb(255, 166, 0);
+  color: #fff;
+  padding: 1rem 2rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 1.2rem; /* Slightly larger for better readability */
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0 20px; /* Simplified margin shorthand */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.get-started:hover {
+  background-color: rgb(255, 140, 0); /* Slightly darker for hover effect */
+  transform: scale(1.05); /* Adds a subtle zoom effect */
+}
+
+h1 {
+  text-align: center;
+  letter-spacing: 2px;
+  font-family: var(--subheading-font);
+  font-size: 2rem; /* Default size for headings */
+  text-decoration: underline;
+  text-decoration-color: #4373d2c3; /* Change to your desired color */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Responsive Styles */
+
+/* For Mobile (up to 600px) */
+/* For all screens */
+/* * {
+  margin-left: 20px;
+  margin-right: 20px;
+} */
+
+/* Exclude the header section */
+header {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* For Mobile (max-width: 600px) */
+@media (max-width: 600px) {
+  .img {
+    margin-bottom: 20px;
+
+    /* Ensure the image scales properly */
+  }
+  p {
+    font-size: 0.8rem; /* Slightly smaller text for mobile */
+  }
+  .get-started {
+    padding: 0.8rem 1.5rem; /* Smaller button */
+    font-size: 0.9rem;
+  }
+  h1 {
+    font-size: 1.5rem; /* Adjust heading size */
+  }
+}
+
+/* For Tablets (601px to 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .img {
+    width: 90%;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .get-started {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/* For Laptops and Desktops (1025px to 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .img {
+    width: 70%;
+  }
+  p {
+    font-size: 1rem;
+  }
+  .get-started {
+    padding: 1.2rem 2.5rem; /* Slightly larger button */
+    font-size: 1.1rem;
+  }
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* For Large Monitors (1441px and above) */
+@media (min-width: 1441px) {
+  .img {
+    width: 40rem; /* Limit the width */
+  }
+  p {
+    font-size: 1.1rem;
+  }
+  .get-started {
+    padding: 1rem 2rem; /* Bigger button for larger screens */
+    font-size: 1.1rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+}

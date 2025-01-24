@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RK</title>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="logo" href="#">RK</a>
+        <button class="hamburger" aria-label="Toggle Menu">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </button>
+        <div class="menu">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <main class="container hero">
+      <div class="img-container">
+        <img class="img-hero" src="image.png" alt="" />
+      </div>
+
+      <div id="text"></div>
+
+      <script src="script.js"></script>
+
+      <script>
+        $(document).ready(function () {
+          var text1 = "My name is Rishan Koiry . "; // First text
+          var text2 = "I am a FrontEnd developer ."; // Second text
+          var i = 0;
+
+          function typeText(text, callback) {
+            if (i < text.length) {
+              $("#text").append(text.charAt(i));
+              i++;
+              setTimeout(function () {
+                typeText(text, callback);
+              }, 100);
+            } else {
+              callback(); // Call the next function after finishing the current text
+            }
+          }
+
+          function resetText(text) {
+            $("#text").text(""); // Clear the text before starting the next typing animation
+            i = 0;
+            typeText(text, function () {}); // Start typing the next text
+          }
+
+          function infiniteTyping() {
+            typeText(text1, function () {
+              setTimeout(function () {
+                resetText(text2); // After text1 finishes, type text2
+              }, 500); // Pause after the first text
+            });
+
+            setTimeout(function () {
+              resetText(text1); // After text2 finishes, type text1 again
+            }, text2.length * 100 + 500); // Pause after the second text
+          }
+
+          // Modify the infiniteTyping to keep the loop going
+          setInterval(function () {
+            resetText(text1);
+            setTimeout(function () {
+              resetText(text2);
+            }, text1.length * 100 + 500);
+          }, text1.length * 100 + text2.length * 100 + 1000); // Keep the cycle going
+        });
+      </script>
+      <br />
+      <div class="button-container">
+        <button class="contact">Contact Us</button>
+        <button class="contact">Learn More</button>
+      </div>
+      <br />
+      <br />
+      <h1>Information</h1>
+      <div class="about container">
+        <h2>About Us</h2>
+        <br />
+        <p>
+          hello My name is rishan koiry and i am a front end developer I have a
+          passion for creating beautiful and functional websites. My goal is to
+          deliver high-quality web solutions that meet the needs of my clients.
+          With a strong foundation in HTML, CSS, and JavaScript, I am dedicated
+          to continuous learning and staying updated with the latest industry
+          trends. Let's work together to bring your ideas to life!
+        </p>
+      </div>
+      <div class="offer container">
+        <h2>What i Offer</h2>
+        <br />
+        <p>
+          I offer a range of services to help you build a strong online
+          presence. Whether you need a new website, a redesign of an existing
+          site, or ongoing maintenance, I can help. I specialize in front-end
+          development and have experience working with a variety of
+          technologies, including HTML, CSS, JavaScript, and more. Let's work
+          together to create a website that meets your needs and exceeds your
+          expectations.
+        </p>
+      </div>
+      <div class="education container">
+        <h2>Education</h2>
+        <br />
+        <div class="school">
+          <p>
+            Currently i am studing in class 8 at dhaka sher-e- bangla School and
+            college
+          </p>
+          <p>2018-2025</p>
+        </div>
+      </div>
+      <br />
+      <br />
+      <footer>
+        <section id="contact">
+          <div class="contact-container container">
+            <h2>Contact Us</h2>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Type your message here..."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit">Send Message</button>
+            </form>
+          </div>
+        </section>
+      </footer>
+    </main>
+  </body>
+</html>

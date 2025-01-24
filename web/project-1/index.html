@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to the Best Website Ever</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap");
+      body h1 {
+        text-align: center;
+      }
+      h3 {
+        text-align: left;
+        border-bottom: 2px solid black;
+        display: inline-block;
+      }
+      body {
+        background-color: lightblue;
+        color: rgb(11, 11, 79);
+        font-family: "Playwrite GB S", cursive;
+      }
+
+      .contact-button {
+        display: inline-block; /* Keep inline-block for button styling */
+        padding: 10px 20px;
+        margin-top: 20px;
+        background-color: rgb(11, 11, 79);
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      .contact-button:hover {
+        background-color: darkblue;
+      }
+
+      .circular-image {
+        width: 200px; /* Set the width of the image */
+        height: 214px; /* Set the height of the image */
+        border-radius: 50%; /* Makes the image circular */
+        object-fit: cover; /* Ensures the image covers the entire area */
+        display: block; /* Block display for margin auto */
+        margin: black; /* Center the image */
+        margin-top: 200px; /* Space above the image */
+      }
+      h2 {
+        /* text-align: center; */
+        border-bottom: 2px solid black;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hi, My Name Is <b>Rishan Koiry &reg;</b></h1>
+    <img
+      class="circular-image"
+      style="display: block; margin: auto; margin-top: 20px"
+    />
+
+    <h3>My Information and Learning :</h3>
+    <ul>
+      <li>I am a web developer and a student.</li>
+      <br />
+      <li>I am currently studying in grade 7.</li>
+      <br />
+      <li>I am a Gamer and Freefire id is 5393940636</li>
+      <br />
+      <li>
+        I am a self-taught web developer and have been learning web development
+        for 4 months.
+      </li>
+      <br />
+      <li>I am a full-stack web developer.</li>
+      <br />
+      <li>I have experience in HTML, CSS, and Python.</li>
+      <br />
+    </ul>
+
+    <h3>My Location:</h3>
+    <ul>
+      <li>I am from <abbr title="Bangladesh">BD.</abbr></li>
+      <br />
+      <li>I live in Dhaka.</li>
+      <br />
+      <li>I am a <abbr title="Bangladesh">BD</abbr> citizen.</li>
+    </ul>
+
+    <div style="display: flex; align-items: center; gap: 10px">
+      <h2>Listen to this Song to Refresh Your Mind:</h2>
+      <audio controls autoplay>
+        <source src="audio.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+
+    <div>
+      <form
+        action="mailto:koiryrishan1@gmail.com"
+        method="POST"
+        enctype="text/plain"
+      >
+        <label for="first-name">First Name:</label>
+        <input
+          placeholder="Enter your First Name"
+          type="text"
+          name="fname"
+          id="first-name"
+          required
+        /><br />
+        <label for="second-name">Second Name:</label>
+        <input
+          placeholder="Enter your Second Name"
+          type="text"
+          name="sname"
+          id="second-name"
+          required
+        /><br />
+        <label for="mobile-number">Mobile Number:</label>
+        <input
+          placeholder="Enter your Mobile Number"
+          type="tel"
+          name="mobile"
+          id="mobile-number"
+          required
+        /><br />
+        <label for="message">Enter your message:</label>
+        <input
+          placeholder="Enter Your Message"
+          type="text"
+          name="message"
+          id="message"
+          required
+        /><br />
+        <br />
+        <div style="text-align: center">
+          <input
+            style="background-color: rgba(46, 46, 255, 0.753)"
+            type="submit"
+            value="Send Message"
+          />
+        </div>
+      </form>
+      <br />
+      <a href="mailto:koiryrishan1@gmail.com" class="contact-button"
+        >Contact Me</a
+      >
+    </div>
+  </body>
+</html>

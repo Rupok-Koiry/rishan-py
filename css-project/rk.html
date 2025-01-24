@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="rk.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        position: relative;
+      }
+
+      .navbar h2 {
+        margin: 0;
+      }
+
+      .links ul {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .links li {
+        margin-right: 20px;
+      }
+
+      .dropdown {
+        width: 300px;
+        display: none;
+        list-style-type: none;
+        padding: 0;
+        position: absolute;
+        right: 10px;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        transform: translateY(-20px);
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      .dropdown.active {
+        display: block;
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .dropdown li {
+        padding: 10px;
+        text-align: center;
+      }
+
+      .dropdown li a {
+        text-decoration: none;
+        color: black;
+      }
+
+      .toggle {
+        display: none;
+        cursor: pointer;
+        font-size: 1.5rem;
+      }
+
+      .close-btn {
+        text-align: right;
+        padding: 10px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        background-color: #f8f8f8;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .close-btn:hover {
+        color: rgba(255, 0, 0, 0.462);
+      }
+
+      @media (max-width: 768px) {
+        .links ul {
+          display: none;
+        }
+
+        .toggle {
+          display: block;
+        }
+        .dropdown {
+          width: 300px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <!-- Navigation Section -->
+      <header id="home" class="navbar">
+        <h1>RK</h1>
+        <nav class="links">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#ourteam">About</a></li>
+            <li><a href="#offer">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#tips">Tips</a></li>
+          </ul>
+        </nav>
+        <button class="button">Download Resume</button>
+        <div class="toggle" onclick="toggleMenu()">☰</div>
+        <ul class="dropdown">
+          <div class="close-btn" onclick="toggleMenu()">&times;</div>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#ourteam">About</a></li>
+          <li><a href="#offer">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#tips">Tips</a></li>
+        </ul>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="group-img-wrapper">
+        <div class="group-img">
+          <img src="assets/Group.png" alt="group-img" />
+          <h2 class="group-img-text">
+            "In the near future, I hope to <br />
+            become a Developer."
+          </h2>
+          <p class="group-img-para">
+            I am passionate about web development and constantly strive to
+            improve my skills. <br />
+            I enjoy learning new technologies and applying them to create
+            innovative solutions.
+          </p>
+          <button class="contact container">CONTACT WITH ME</button>
+        </div>
+      </section>
+
+      <!-- Cards Section -->
+      <section class="cards-container container">
+        <h2>Why Web Development??</h2>
+        <p class="subtitle">
+          Web development allows me to create innovative solutions, solve
+          problems, and continuously learn new technologies.
+        </p>
+        <div class="card-wrapper">
+          <div class="card">
+            <div class="card-content">
+              <h3>I will help People by creating Modern Web System</h3>
+              <p>Creating web systems is my ultimate passion.</p>
+              <button class="learn-more">Learn More</button>
+            </div>
+            <div class="card-image">
+              <img src="assets/Layer_1.png" alt="Coding Illustration" />
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-image">
+              <img src="assets/Group 3.png" alt="Web System Illustration" />
+            </div>
+            <div class="card-content">
+              <h3>I will help People by creating Modern Web System</h3>
+              <p>
+                Building efficient, user-friendly web applications is my
+                passion.
+              </p>
+              <button class="learn-more">Learn More</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <h3>I will help People by creating Modern Web System</h3>
+              <p>Creating modern web systems is my passion.</p>
+              <button class="learn-more">Learn More</button>
+            </div>
+            <div class="card-image">
+              <img src="assets/Group 4.png" alt="Coding Illustration" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Inspiration Section -->
+      <section class="inspiration-container container">
+        <h2 class="title">My Inspiration</h2>
+        <p class="subtitle">
+          My inspiration comes from the ever-evolving world of technology and
+          the endless possibilities it offers to create innovative solutions.
+        </p>
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/your-video-id"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+
+      <!-- Current Target Section -->
+      <section class="all container">
+        <h2>My Current Target</h2>
+        <p>
+          I am currently focusing on mastering HTML, CSS, and JavaScript to
+          build dynamic web applications.
+        </p>
+        <div class="all1">
+          <div class="html">
+            <img src="assets/html.png" alt="HTML Logo" />
+            <p>
+              I am learning HTML to structure web content effectively and its
+              Good.
+            </p>
+            <a class="learnmore" href="#">Learn More</a>
+          </div>
+          <div class="css">
+            <img src="assets/css.png" alt="CSS Logo" />
+            <p>I am learning CSS to style and layout web pages effectively.</p>
+            <a class="learnmore" href="#">Learn More</a>
+          </div>
+          <div class="js">
+            <img src="assets/js.png" alt="JavaScript Logo" />
+            <p>
+              I am learning JavaScript, HTML, and CSS to build web applications.
+            </p>
+            <a class="learnmore" href="#">Learn More</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Next Target Section -->
+      <section class="next container">
+        <div class="next1">
+          <h2>My Next Target</h2>
+          <p class="subtitle">
+            My Next Target is to master advanced JavaScript frameworks and
+            backend technologies for full-stack development.
+          </p>
+
+          <!-- React.js Section -->
+          <div class="recatjs">
+            <img class="image" src="assets/react.png" alt="React" />
+            <div>
+              <h3 class="content">React.JS</h3>
+              <p class="content">
+                React is a widely-used JavaScript library for building user
+                interfaces, especially for single-page applications. It's so
+                good also.
+                <a class="learnmores" href="learnmore">Learn More</a>
+              </p>
+              <button class="accordion">What is React?</button>
+              <div class="panel1">
+                <p>
+                  React is a widely-used JavaScript library for building user
+                  interfaces, especially for single-page applications. It allows
+                  developers to create dynamic and interactive UIs by breaking
+                  down the interface into small, reusable components. With
+                  features like virtual DOM and efficient updates, React helps
+                  in building fast, responsive applications. It's commonly used
+                  in frontend development to enhance user experience with smooth
+                  interactions and minimal reloading.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Node.js Section -->
+          <div class="recatjs">
+            <img class="imagenode" src="assets/nodejs.png" alt="Node.js" />
+            <div>
+              <h3 class="content">Node.JS</h3>
+              <p class="content">
+                Node.js is a powerful JavaScript runtime built on Chrome's V8
+                engine. It allows developers to build scalable network
+                applications quickly and efficiently.
+              </p>
+              <a class="learnmores" href="learnmore">Learn More</a>
+              <button class="accordion2">What is Node.JS ?</button>
+              <div class="panel2">
+                <p>
+                  Node.js is a runtime environment that allows developers to run
+                  JavaScript on the server-side. Built on Chrome's V8 JavaScript
+                  engine, Node.js is known for its non-blocking, event-driven
+                  architecture, making it highly efficient for handling
+                  concurrent requests. It's commonly used for backend
+                  development, enabling developers to build scalable,
+                  high-performance applications. When combined with frameworks
+                  like Express.js, Node.js provides a robust solution for
+                  creating full-stack applications with JavaScript.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- MongoDB Section -->
+          <div class="recatjs">
+            <img class="image" src="assets/mongodb.png" alt="MongoDB" />
+            <div>
+              <h3 class="content">MongoDB</h3>
+              <p class="content">
+                MongoDB is a flexible, document-oriented NoSQL database that
+                allows for scalable and high-performance data storage, ideal for
+                modern web applications.
+              </p>
+              <a class="learnmores" href="learnmore">Learn More</a>
+              <button class="accordion3">What is MongoDB ?</button>
+              <div class="panel3">
+                <p>
+                  MongoDB is a popular open-source NoSQL database that stores
+                  data in a flexible, JSON-like format called BSON (Binary
+                  JSON). Unlike traditional relational databases, it doesn't
+                  rely on tables and rows, but instead uses collections and
+                  documents, making it highly scalable and ideal for handling
+                  large volumes of unstructured or semi-structured data. MongoDB
+                  is commonly used in modern web applications due to its high
+                  performance, ease of integration with various programming
+                  languages, and ability to handle dynamic data schemas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="offer" class="containerss container">
+        <div class="accordionlast">
+          <div class="accordion-item" id="question1">
+            <a class="accordion-link" href="#question1">
+              <div class="flex">
+                <h3>What I do ?</h3>
+              </div>
+              <i class="icon ion-md-arrow-forward"></i>
+              <i class="icon ion-md-arrow-down"></i>
+            </a>
+            <div class="answer">
+              <p>
+                "I am a passionate and skilled full-stack web developer with 4+
+                years of experience, specializing in building scalable and
+                responsive web applications. I have expertise in technologies
+                like React, Node.js, Redux Toolkit, Tailwind CSS, and MongoDB. I
+                create seamless user experiences, develop efficient backend
+                systems, and integrate third-party APIs to deliver high-quality,
+                user-friendly applications. Currently, I am also pursuing a
+                Bachelor's in Physics at Dhaka University while freelancing and
+                exploring innovative tech solutions."
+              </p>
+            </div>
+            <hr />
+          </div>
+          <div class="accordion-item" id="question2">
+            <a class="accordion-link" href="#question2">
+              <div class="flex">
+                <h3>What I Offer ?</h3>
+              </div>
+              <i class="icon ion-md-arrow-forward"></i>
+              <i class="icon ion-md-arrow-down"></i>
+            </a>
+            <div class="answer">
+              <p>
+                "I offer end-to-end web development services, from creating
+                responsive and dynamic front-end interfaces using React.js to
+                developing powerful back-end systems with Node.js and Express. I
+                specialize in building scalable applications with clean,
+                maintainable code and seamless user experiences. My services
+                also include API integrations, payment gateway setups, and
+                database management with MongoDB and PostgreSQL. Whether you're
+                looking to build a custom e-commerce platform, a personal
+                website, or a complex web app, I provide innovative solutions
+                tailored to your business needs, ensuring high performance and
+                user satisfaction."
+              </p>
+            </div>
+            <hr />
+          </div>
+          <div class="accordion-item" id="question3">
+            <a class="accordion-link" href="#question3">
+              <div class="flex">
+                <h3>WHAT I DO AS A FRONTEND DEVELOPER ?</h3>
+              </div>
+              <i class="icon ion-md-arrow-forward"></i>
+              <i class="icon ion-md-arrow-down"></i>
+            </a>
+            <div class="answer">
+              <p>
+                "As a front-end developer, I create visually appealing and
+                user-friendly interfaces that deliver smooth and engaging
+                experiences. I specialize in using modern web technologies like
+                React.js to build dynamic, interactive web applications. From
+                crafting responsive designs that work seamlessly across devices
+                to optimizing performance for faster load times, my goal is to
+                ensure that users have an intuitive, enjoyable interaction with
+                the application. I also integrate with APIs, handle state
+                management using Redux, and use tools like Tailwind CSS and
+                Framer Motion for stunning visuals and animations."
+              </p>
+            </div>
+            <hr />
+          </div>
+          <div class="accordion-item" id="question4">
+            <a class="accordion-link" href="#question4">
+              <div class="flex">
+                <h3>WHAT I DO AS A BACKEND DEVELOPER ?</h3>
+              </div>
+              <i class="icon ion-md-arrow-forward"></i>
+              <i class="icon ion-md-arrow-down"></i>
+            </a>
+            <div class="answer">
+              <p>
+                "As a back-end developer, I focus on building the server-side
+                logic and infrastructure that powers web applications. I
+                specialize in using technologies like Node.js and Express to
+                create scalable and efficient APIs. I handle database
+                management, working with systems like PostgreSQL and MongoDB to
+                store and retrieve data. Ensuring secure user authentication and
+                authorization through JWT tokens, implementing third-party
+                integrations for payments, and optimizing server performance are
+                some of my key responsibilities. My goal is to create robust,
+                reliable back-end systems that ensure smooth communication
+                between the front end and databases."
+              </p>
+            </div>
+            <hr />
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section -->
+      <section id="ourteam" class="shadow container">
+        <div class="responsive-container-block container">
+          <p class="text-blk team-head-text">Our Team</p>
+          <div class="responsive-container-block">
+            <!-- Team Member 1 -->
+            <div
+              class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container-team"
+            >
+              <div class="card-team">
+                <div class="team-image-wrapper">
+                  <img
+                    class="team-member-image"
+                    src="assets/image.png"
+                    alt="Team Member"
+                  />
+                </div>
+                <p class="text-blk name">Rishan koiry</p>
+                <p class="text-blk position">Founder OF RK</p>
+                <p class="text-blk feature-text">
+                  I am dedicated to leading our team towards innovative
+                  solutions and success.
+                </p>
+                <div class="social-icons">
+                  <a href="https://www.twitter.com" target="_blank">
+                    <img
+                      class="twitter-icon"
+                      src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg"
+                      alt="Twitter"
+                    />
+                  </a>
+                  <a href="https://www.facebook.com" target="_blank">
+                    <img
+                      class="facebook-icon"
+                      src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg"
+                      alt="Facebook"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Repeat Team Member Cards 2-6 with same structure -->
+            <div id="ourteam" class="shadow container">
+              <div class="responsive-container-block container">
+                <p class="text-blk team-head-text">Our Team</p>
+                <div class="responsive-container-block">
+                  <div
+                    class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container-team"
+                  >
+                    <div class="card-team">
+                      <div class="team-image-wrapper">
+                        <img class="team-member-image" src="assets\image.png" />
+                      </div>
+                      <p class="text-blk name">Rishan koiry</p>
+                      <p class="text-blk position">Founder OF RK</p>
+                      <p class="text-blk feature-text">
+                        I am dedicated to leading our team towards innovative
+                        solutions and success.
+                      </p>
+                      <div class="social-icons">
+                        <a href="https://www.twitter.com" target="_blank">
+                          <img
+                            class="twitter-icon"
+                            src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg"
+                          />
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank">
+                          <img
+                            class="facebook-icon"
+                            src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container-team"
+                  >
+                    <div class="card-team">
+                      <div class="team-image-wrapper">
+                        <img class="team-member-image" src="assets\image.png" />
+                      </div>
+                      <p class="text-blk name">Rishan koiry</p>
+                      <p class="text-blk position">Founder OF RK</p>
+                      <p class="text-blk feature-text">
+                        I am dedicated to leading our team towards innovative
+                        solutions and success.
+                      </p>
+                      <div class="social-icons">
+                        <a href="https://www.twitter.com" target="_blank">
+                          <img
+                            class="twitter-icon"
+                            src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg"
+                          />
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank">
+                          <img
+                            class="facebook-icon"
+                            src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container-team"
+                  >
+                    <div class="card-team">
+                      <div class="team-image-wrapper">
+                        <img class="team-member-image" src="assets\image.png" />
+                      </div>
+                      <p class="text-blk name">Rishan koiry</p>
+                      <p class="text-blk position">Founder OF RK</p>
+                      <p class="text-blk feature-text">
+                        I am dedicated to leading our team towards innovative
+                        solutions and success.
+                      </p>
+                      <div class="social-icons">
+                        <a href="https://www.twitter.com" target="_blank">
+                          <img
+                            class="twitter-icon"
+                            src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg"
+                          />
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank">
+                          <img
+                            class="facebook-icon"
+                            src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container-team"
+                  >
+                    <div class="card-team">
+                      <div class="team-image-wrapper">
+                        <img class="team-member-image" src="assets\image.png" />
+                      </div>
+                      <p class="text-blk name">Rishan koiry</p>
+                      <p class="text-blk position">Founder OF RK</p>
+                      <p class="text-blk feature-text">
+                        I am dedicated to leading our team towards innovative
+                        solutions and success.
+                      </p>
+                      <div class="social-icons">
+                        <a href="https://www.twitter.com" target="_blank">
+                          <img
+                            class="twitter-icon"
+                            src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg"
+                          />
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank">
+                          <img
+                            class="facebook-icon"
+                            src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container-team"
+                  >
+                    <div class="card-team">
+                      <div class="team-image-wrapper">
+                        <img class="team-member-image" src="assets\image.png" />
+                      </div>
+                      <p class="text-blk name">Rishan koiry</p>
+                      <p class="text-blk position">Founder OF RK</p>
+                      <p class="text-blk feature-text">
+                        I am dedicated to leading our team towards innovative
+                        solutions and success.
+                      </p>
+                      <div class="social-icons">
+                        <a href="https://www.twitter.com" target="_blank">
+                          <img
+                            class="twitter-icon"
+                            src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg"
+                          />
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank">
+                          <img
+                            class="facebook-icon"
+                            src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container-team"
+                  >
+                    <div class="card-team">
+                      <div class="team-image-wrapper">
+                        <img class="team-member-image" src="assets\image.png" />
+                      </div>
+                      <p class="text-blk name">Rishan koiry</p>
+                      <p class="text-blk position">Founder OF RK</p>
+                      <p class="text-blk feature-text">
+                        I am dedicated to leading our team towards innovative
+                        solutions and success.
+                      </p>
+                      <div class="social-icons">
+                        <a href="https://www.twitter.com" target="_blank">
+                          <img
+                            class="twitter-icon"
+                            src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg"
+                          />
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank">
+                          <img
+                            class="facebook-icon"
+                            src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container-team"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- [Previous team member cards structure repeated 5 more times] -->
+      </section>
+
+      <!-- Footer Section -->
+      <footer>
+        <!-- Support and Tips Section -->
+        <div class="footerdiv container">
+          <div class="footer">
+            <div class="footer-content">
+              <h2 class="fotterh2">I need Support And Tips.</h2>
+              <p>
+                Give Me some suggestions or advice to improve my skills and
+                projects.
+              </p>
+              <form>
+                <input
+                  class="lastpart"
+                  type="text"
+                  placeholder="Suggest me any feedback for me"
+                />
+                <button class="lastpart" type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Links Section -->
+        <div id="tips" class="end container">
+          <h3>An open Commitment by RK.H</h3>
+          <div class="social">
+            <a href="https://www.facebook.com/rishan.koiry/"
+              ><img class="image" src="assets/facebook.png" alt="Facebook"
+            /></a>
+            <a href="https://github.com/Rupok-Koiry"
+              ><img class="image" src="assets/github.png" alt="Github"
+            /></a>
+            <a href="https://www.linkedin.com/in/rupok-koiry/"
+              ><img
+                class="image"
+                src="assets/linkedin-icon 1.png"
+                alt="LinkedIn"
+            /></a>
+          </div>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div id="contact" class="background containerform">
+          <div class="containers">
+            <div class="screen containerform">
+              <div class="screen-header">
+                <div class="screen-header-left">
+                  <div class="screen-header-button close"></div>
+                  <div class="screen-header-button maximize"></div>
+                  <div class="screen-header-button minimize"></div>
+                </div>
+                <div class="screen-header-right">
+                  <div class="screen-header-ellipsis"></div>
+                  <div class="screen-header-ellipsis"></div>
+                  <div class="screen-header-ellipsis"></div>
+                </div>
+              </div>
+              <div class="screen-body">
+                <div class="screen-body-item left">
+                  <div class="app-title">
+                    <span>CONTACT US</span>
+                  </div>
+                  <div class="app-contact">CONTACT INFO : +8801932916688</div>
+                </div>
+                <div class="screen-body-item">
+                  <div class="app-form">
+                    <div class="app-form-group">
+                      <input class="app-form-control" placeholder="NAME" />
+                    </div>
+                    <div class="app-form-group">
+                      <input class="app-form-control" placeholder="EMAIL" />
+                    </div>
+                    <div class="app-form-group">
+                      <input
+                        class="app-form-control"
+                        placeholder="CONTACT NO"
+                      />
+                    </div>
+                    <div class="app-form-group message">
+                      <input class="app-form-control" placeholder="MESSAGE" />
+                    </div>
+                    <div class="app-form-group buttons">
+                      <button class="app-form-button">CANCEL</button>
+                      <button class="app-form-button">SEND</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="credits">
+              inspired by RK
+              <a class="credits-link" href="#" target="_blank">
+                <svg class="dribbble" viewBox="0 0 200 200">
+                  <g stroke="#ffffff" fill="none">
+                    <circle cx="100" cy="100" r="90" stroke-width="20"></circle>
+                    <path
+                      d="M62.737004,13.7923523 C105.08055,51.0454853 135.018754,126.906957 141.768278,182.963345"
+                      stroke-width="20"
+                    ></path>
+                    <path
+                      d="M10.3787186,87.7261455 C41.7092324,90.9577894 125.850356,86.5317271 163.474536,38.7920951"
+                      stroke-width="20"
+                    ></path>
+                    <path
+                      d="M41.3611549,163.928627 C62.9207607,117.659048 137.020642,86.7137169 189.041451,107.858103"
+                      stroke-width="20"
+                    ></path>
+                  </g>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script>
+      // Menu Toggle Function
+      function toggleMenu() {
+        const dropdown = document.querySelector(".dropdown");
+        dropdown.classList.toggle("active");
+      }
+
+      // Accordion Function
+      const accordions = document.querySelectorAll(
+        ".accordion, .accordion2, .accordion3"
+      );
+      accordions.forEach((accordion) => {
+        accordion.addEventListener("click", function () {
+          this.classList.toggle("active");
+          const panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+            panel.style.display = "none";
+          } else {
+            panel.style.display = "block";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

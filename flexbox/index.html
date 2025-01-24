@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grid</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap");
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+        color: #333;
+      }
+      h1 {
+        text-align: center;
+        margin: 20px;
+        font-size: 2rem;
+        color: #555;
+      }
+      .container {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+          rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .item {
+        font-family: "Rubik Vinyl", serif;
+        box-shadow: rgba(240, 46, 170, 0.4) 0px 5px,
+          rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px,
+          rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        color: white;
+        height: 10rem;
+        border-radius: 10px;
+      }
+      .item1 {
+        grid-column: span 3;
+        background-color: #ff6f61;
+      }
+      .item2 {
+        background-color: #4a90e2;
+      }
+      .item3 {
+        background-color: #6200ff;
+      }
+      .item4 {
+        grid-column: span 3;
+        background-color: #ffcc00;
+      }
+      .item5 {
+        grid-row: span 2;
+        background-color: #00aaff;
+      }
+      .item6 {
+        background-color: #00ff04b6;
+      }
+      .item:hover {
+        font-family: "Rubik Vinyl", serif;
+        font-weight: 900;
+        font-size: larger;
+        transform: scale(1.1);
+        transition: transform 0.8s;
+      }
+      .item:hover {
+        box-shadow: rgba(240, 46, 170, 0.4) 5px 5px,
+          rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px,
+          rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+        transition: all linear 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Grid</h1>
+    <div class="container">
+      <div class="item item1">HEAD</div>
+      <div class="item item5">Menu</div>
+      <div class="item item6">content</div>
+      <div class="item item3">Sidebar</div>
+      <div class="item item4">FOOTER</div>
+    </div>
+  </body>
+</html>
